@@ -1,15 +1,16 @@
 :root {
   --primary-font: "JetBrains Mono", monospace;
   --text-font: "Lato", sans-serif;
-  --primary-color: oklch(20% 0.05 180); /* dark teal #001b17 */
-  --very-light-pink: oklch(99% 0.01 0); /* super light pink #fffafc */
-  --very-light-teal: oklch(99% 0.01 180);
+  --primary-color: #001b17; /*  oklch(20% 0.05 180)*/
+  --very-light-pink: #fffafc; /* oklch(99% 0.01 0)*/
+  --very-light-teal: #f5fefc; /* oklch(99% 0.01 180)*/
   --pink: oklch(70% 0.12 0); /* pink #da7d9b */
-  --teal: oklch(50% 0.06 180); /* teal #396f64 */
-  --light-teal: oklch(95% 0.035 180); /* light teal #d6f7ef */
-  --light-pink: oklch(95% 0.035 360); /* light pink #ffe7ee */
+  /*  --teal: oklch(50% 0.06 180); teal #396f64*/
+  --light-pink: #ffe7ee; /* oklch(95% 0.035 360) */
+  --light-teal: #d6f7ef; /*  oklch(95% 0.035 180) */
   --box-shadow: 0 5px 10px rgba(0, 0, 0,0.3);
 }
+
 body {
   background-color: var(--very-light-pink);
   color: var(--primary-color);
@@ -21,8 +22,18 @@ nav {
   background-color: var(--very-light-pink);
 }
 
-h1 .hi {
-  font-size: smaller;
+.my-brand {
+  background: var(--light-teal);
+  padding: 5px;
+
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 h3 {
@@ -35,43 +46,37 @@ h3 {
   justify-content: center;
 }
 
-
 .my-button-one {
   font-size: 1rem;
+  line-height: 3rem;
   color: white;
-  background: var(--teal);
-  border: 1px solid var(--teal);
+  background: teal;
+  border: 1px solid teal;
   margin: 20px;
-  border-radius: 4px;
-  padding: 20px 15px;
+  border-radius: 10px;
+  padding: 10px 20px;
   text-decoration: none;
-  box-shadow: var(--box-shadow);
-}
-
-.my-button-one:hover {
-  color: white;
-  background: var(--pink);
-  border: 1px solid var(--pink);
-  transition: all 200ms ease-in-out;
 }
 
 .my-button-two {
   font-size: 1rem;
-  color: var(--teal);
-  border: 1px solid var(--teal);
+  line-height: 3rem;
+  color: teal;
+  border: 1px solid teal;
   margin: 20px;
-  border-radius: 4px;
-  padding: 20px 15px;
+  border-radius: 10px;
+  padding: 10px 20px;
   text-decoration: none;
-  box-shadow: var(--box-shadow);
 }
 
-.my-button-two:hover {
+.my-button-one:hover, .my-button-two:hover {
   color: white;
   background: var(--pink);
   border: 1px solid var(--pink);
+  padding: 10px 20px;
   transition: all 200ms ease-in-out;
 }
+
 
 .row {
   display: flex;
@@ -90,13 +95,13 @@ h3 {
   font-family: var(--text-font);
 }
 
-a.link {
+a {
   text-decoration-color: var(--pink);
   text-decoration-thickness: 2px;
   color: var(--primary-color);
 }
 
-a.link:hover {
+a:hover {
   background: var(--pink);
   padding: 2px;
   color: var(--secondary-color);
@@ -108,6 +113,13 @@ a.link:hover {
   font-size: 28px;
 }
 
+.note {
+  font-size: smaller;
+}
+
+.coder {
+  margin: 20px;
+}
 
 ::selection {
   background: var(--pink);
