@@ -21,6 +21,10 @@ nav {
   background-color: var(--very-light-pink);
 }
 
+h1 .hi {
+  font-size: smaller;
+}
+
 h1 {
   margin-top: 10dvh;
   font-size: 96px;
