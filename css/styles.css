@@ -114,6 +114,7 @@ a:hover {
 
 .note {
   font-size: smaller;
+  opacity: 0.8;
 }
 
 .coder {
