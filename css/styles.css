@@ -8,7 +8,7 @@
   /*  --teal: oklch(50% 0.06 180); teal #396f64*/
   --light-pink: #ffe7ee; /* oklch(95% 0.035 360) */
   --light-teal: #d6f7ef; /*  oklch(95% 0.035 180) */
-  --box-shadow: 0 5px 10px rgba(0, 0, 0,0.3);
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -25,7 +25,6 @@ nav {
 .my-brand {
   background: var(--light-teal);
   padding: 5px;
-
 }
 
 .hero {
@@ -69,14 +68,14 @@ h3 {
   text-decoration: none;
 }
 
-.my-button-one:hover, .my-button-two:hover {
+.my-button-one:hover,
+.my-button-two:hover {
   color: white;
   background: var(--pink);
   border: 1px solid var(--pink);
   padding: 10px 20px;
   transition: all 200ms ease-in-out;
 }
-
 
 .row {
   display: flex;
