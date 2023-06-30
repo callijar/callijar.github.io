@@ -11,6 +11,11 @@
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+::selection {
+  background: var(--pink);
+  color: #000;
+}
+
 body {
   background-color: var(--very-light-pink);
   color: var(--primary-color);
@@ -22,21 +27,68 @@ nav {
   background-color: var(--very-light-pink);
 }
 
+h2 {
+  opacity: 0.7;
+}
+
+
+p {
+  font-family: var(--text-font);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 2px;
+  color: var(--primary-color);
+}
+
+a:hover {
+  background: var(--pink);
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+ul {
+  font-family: var(--text-font);
+  margin-left: 1em;
+}
+
+li::marker {
+  color: teal;
+}
+
+img {
+  margin: 1em auto;
+}
+
 .my-brand {
   background: var(--light-teal);
   padding: 5px;
 }
 
-.hero {
+.one-page {
   height: 100vh;
+}
+.hero {
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
 
-h3 {
-  opacity: 0.7;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2em 4em auto;
+  padding: 1em;
+  border-radius: 0.5em;
+  line-height: 1.5;
+  text-align: left;
+  background: var(--light-pink);
 }
 
 .my-button {
@@ -77,37 +129,6 @@ h3 {
   transition: all 200ms ease-in-out;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2em 0;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 0.2em;
-  font-size: 1.5em;
-  line-height: 1.5;
-  text-align: left;
-  background: var(--light-pink);
-}
-
-.row p {
-  font-family: var(--text-font);
-}
-
-a {
-  text-decoration-color: var(--pink);
-  text-decoration-thickness: 2px;
-  color: var(--primary-color);
-}
-
-a:hover {
-  background: var(--pink);
-  padding: 2px;
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: all 200ms ease-in-out;
-}
-
 .my-email {
   font-size: 28px;
 }
@@ -119,9 +140,4 @@ a:hover {
 
 .coder {
   margin: 20px;
-}
-
-::selection {
-  background: var(--pink);
-  color: #000;
 }
