@@ -137,7 +137,8 @@ img {
   font-size: 6vw;
 }
 
-.contact-icons i:hover, a:hover {
+.contact-icons i:hover,
+.contact-icons a:hover {
   color: teal;
   background: none;
   transition: all 200ms ease-in-out;
