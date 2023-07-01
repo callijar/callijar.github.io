@@ -73,6 +73,7 @@ img {
 .one-page {
   height: 100vh;
 }
+
 .hero {
   height: 80vh;
   width: 100%;
@@ -142,4 +143,17 @@ img {
 
 .coder {
   margin: 20px;
+}
+
+
+@media (max-width: 600px) {
+  .row {
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 0.25em;
+  }
+
+  .hero {
+    height: 70vh;
+  }
 }
