@@ -140,7 +140,7 @@ img {
 .contact-icons i:hover,
 .contact-icons a:hover {
   color: teal;
-  background: none;
+  background: transparent;
   transition: all 200ms ease-in-out;
 }
 
