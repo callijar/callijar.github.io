@@ -132,8 +132,15 @@ img {
   transition: all 200ms ease-in-out;
 }
 
-.my-email {
-  font-size: 28px;
+.contact-icons i {
+  margin: 0.25em;
+  font-size: 6vw;
+}
+
+.contact-icons i:hover, a:hover {
+  color: teal;
+  background: none;
+  transition: all 200ms ease-in-out;
 }
 
 .note {
