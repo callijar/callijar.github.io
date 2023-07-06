@@ -36,6 +36,7 @@ h2 {
 
 p {
   font-family: var(--text-font);
+  font-size: larger;
   line-height: 1.5;
 }
 
@@ -86,10 +87,11 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 2em 4em auto;
+  margin: auto;
   padding: 2em;
   border-radius: 0.5em;
   line-height: 1.5;
+  max-width: 80ch;
   text-align: left;
   background: var(--light-pink);
 }
@@ -157,7 +159,7 @@ img {
   .row {
     margin: 0 auto;
     margin-top: 1em;
-    padding: 0.25em;
+    padding: 1em;
   }
 
   .hero {
