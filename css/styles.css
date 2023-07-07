@@ -76,7 +76,7 @@ img {
 }
 
 .hero {
-  height: 80vh;
+  height: 75vh;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -88,6 +88,7 @@ img {
   flex-wrap: wrap;
   align-items: center;
   margin: auto;
+  margin-top: 2em;
   padding: 2em;
   border-radius: 0.5em;
   line-height: 1.5;
