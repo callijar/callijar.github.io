@@ -166,4 +166,8 @@ img {
   .hero {
     height: 70vh;
   }
+
+  .contact-icons i {
+    font-size: 25vw;
+  }
 }
