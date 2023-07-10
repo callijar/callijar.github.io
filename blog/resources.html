@@ -15,14 +15,16 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Blog</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Resources</title>
   </head>
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex px-5 py-3">
-          <a class="navbar-brand my-brand" href="index.html">Hajar Lavasani</a>
+          <a class="navbar-brand my-brand" href="../index.html"
+            >Hajar Lavasani</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -39,32 +41,56 @@
             id="navbarNavAltMarkup"
           >
             <div class="navbar-nav">
-              <a class="nav-link" href="about.html">About</a>
-              <a class="nav-link" href="project.html">Projects</a>
-              <a class="nav-link active" aria-current="page" href="blog.html"
+              <a class="nav-link" href="../about.html">About</a>
+              <a class="nav-link" href="../project.html">Projects</a>
+              <a class="nav-link active" aria-current="page" href="../blog.html"
                 >Blog</a
               >
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="../contact.html">Contact</a>
             </div>
           </div>
         </div>
       </nav>
 
-      <section class="row">
-        <p>This is where I will be posting snippets about interesting people and
-          websites and my answer to the coding problems I encounter.</p>
-      </section>
+      <article class="row">
+        <h1>Web development resources</h1>
 
-      <section class="row box">
-        <h2>
-          <a
-            href="blog/resources.html"
-            title="blog post 001"
-            >Useful and inspiring resources</a
-          >
-        </h2>
-        <p>These are some resources that I keep coming back to for reference or inspiration.</p>
-      </section>
+        <p>Some resources that I find useful:</p>
+        <section>
+          <h3>
+            <a
+              href="https://css-tricks.com/what-do-you-name-color-variables/"
+              target="_blank"
+              title="naming CSS variables"
+              >Naming CSS variables</a
+            >
+          </h3>
+
+          <p>
+            There are some convenient conventions, but ultimately, choose a
+            system that feels right for you and is manageable in the
+            long run.
+          </p>
+        </section>
+        <br />
+        <section>
+          <h3>
+            <a href="https://oklch.com/" target="_blank" title="color palette"
+              >Color palette</a
+            >
+          </h3>
+
+          <p>
+            Although not its main purpose, OKLCH color picker and converter is a
+            very convenient tool for creating color palettes. My website theme
+            is teal and pink. In OKLCH, this converts to hue values of 180 and 0
+            respectively. From there, I just had to choose a chroma value and
+            change lightness to create my palette.
+          </p>
+        </section>
+
+        <p>...</p>
+      </article>
 
       <footer class="coder">
         © 2023

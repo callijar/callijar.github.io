@@ -30,7 +30,7 @@ nav {
   background-color: var(--very-light-pink);
 }
 
-h2 {
+h2, h3, h4 {
   opacity: 0.8;
 }
 
@@ -94,7 +94,13 @@ img {
   line-height: 1.5;
   max-width: 80ch;
   text-align: left;
-  background: var(--light-pink);
+  background: transparent;
+}
+
+.box {
+  border-radius: 0.5em;
+  border: 1px solid;
+  border-color: teal;
 }
 
 .my-button {
