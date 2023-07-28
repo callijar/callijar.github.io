@@ -1,36 +1,49 @@
 :root {
   --primary-font: "JetBrains Mono", monospace;
   --text-font: "Lato", sans-serif;
-  --primary-color: #001b17; /*  oklch(20% 0.05 180)*/
+  --text-color: #001b17; /*  oklch(20% 0.05 180)*/
+  --background-color: #fffafc; /* oklch(99% 0.01 0)*/
+  --accent-color-one: #da7d9b; /* oklch(70% 0.12 0) */
+  --accent-color-two: teal; /*  oklch(50% 0.06 180); teal #396f64*/
+  --brand-color: #d6f7ef; /*  oklch(95% 0.035 180) */
+  /* --very-light-teal: #f5fefc; /* oklch(99% 0.01 180)*/
+  /* --light-pink: #ffe7ee; /* oklch(95% 0.035 360) */
+  /* --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
+}
 
-  --teal: teal; /*  oklch(50% 0.06 180); teal #396f64*/
-  --light-teal: #d6f7ef; /*  oklch(95% 0.035 180) */
-  --very-light-teal: #f5fefc; /* oklch(99% 0.01 180)*/
+:root .dark-theme {
+  --text-color: #fffafc;
+  --background-color: #001b17;
+  --brand-color: teal;
+}
 
-  --pink: #da7d9b; /* oklch(70% 0.12 0) */
-  --light-pink: #ffe7ee; /* oklch(95% 0.035 360) */
-  --very-light-pink: #fffafc; /* oklch(99% 0.01 0)*/
-
-  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #fffafc;
+    --background-color: #001b17;
+    --brand-color: teal;
+  }
 }
 
 ::selection {
-  background: var(--pink);
+  background: var(--accent-color-one);
   color: #000;
 }
 
 body {
-  background-color: var(--very-light-pink);
-  color: var(--primary-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   text-align: center;
   font-family: var(--primary-font);
 }
 
 nav {
-  background-color: var(--very-light-pink);
+  background-color: var(--background-color);
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   opacity: 0.8;
 }
 
@@ -41,14 +54,14 @@ p {
 }
 
 a {
-  text-decoration-color: var(--pink);
+  text-decoration-color: var(--accent-color-one);
   text-decoration-thickness: 2px;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 a:hover {
-  background: var(--pink);
-  color: var(--secondary-color);
+  background: var(--accent-color-one);
+  color: var(--text-color);
   text-decoration: none;
   transition: all 200ms ease-in-out;
 }
@@ -59,7 +72,7 @@ ul {
 }
 
 li::marker {
-  color: teal;
+  color: --accent-color-two;
 }
 
 img {
@@ -67,7 +80,7 @@ img {
 }
 
 .my-brand {
-  background: var(--light-teal);
+  background: var(--brand-color);
   padding: 5px;
 }
 
@@ -100,7 +113,7 @@ img {
 .box {
   border-radius: 0.5em;
   border: 1px solid;
-  border-color: teal;
+  border-color: var(--accent-color-two);
 }
 
 .my-button {
@@ -112,9 +125,9 @@ img {
 .my-button-one {
   font-size: 1rem;
   line-height: 3rem;
-  color: white;
-  background: teal;
-  border: 1px solid teal;
+  color: var(--background-color);
+  background: var(--accent-color-two);
+  border: 1px solid var(--accent-color-two);
   margin: 20px;
   border-radius: 10px;
   padding: 10px 20px;
@@ -124,8 +137,8 @@ img {
 .my-button-two {
   font-size: 1rem;
   line-height: 3rem;
-  color: teal;
-  border: 1px solid teal;
+  color: var(--accent-color-two);
+  border: 1px solid var(--accent-color-two);
   margin: 20px;
   border-radius: 10px;
   padding: 10px 20px;
@@ -134,9 +147,9 @@ img {
 
 .my-button-one:hover,
 .my-button-two:hover {
-  color: white;
-  background: var(--pink);
-  border: 1px solid var(--pink);
+  color: var(--background-color);
+  background: var(--accent-color-one);
+  border: 1px solid var(--accent-color-one);
   padding: 10px 20px;
   transition: all 200ms ease-in-out;
 }
@@ -148,7 +161,7 @@ img {
 
 .contact-icons i:hover,
 .contact-icons a:hover {
-  color: teal;
+  color: var(--accent-color-two);
   background: transparent;
   transition: all 200ms ease-in-out;
 }
