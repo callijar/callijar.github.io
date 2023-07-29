@@ -17,6 +17,7 @@
   --brand-color: teal;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   body {
     --text-color: #fffafc;
@@ -24,6 +25,7 @@
     --brand-color: teal;
   }
 }
+*/
 
 ::selection {
   background: var(--accent-color-one);
@@ -89,7 +91,7 @@ img {
 }
 
 .hero {
-  height: 75vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -173,6 +175,7 @@ img {
 
 .coder {
   margin: 20px;
+  font-size: smaller;
 }
 
 @media (max-width: 600px) {
