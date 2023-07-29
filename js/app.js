@@ -28,6 +28,15 @@ var theme = "light-theme";
 let themeButton = document.querySelector("#theme-icon");
 themeButton.addEventListener("click", toggleTheme);
 
-if (localStorage.getItem("activeTheme") === "dark theme activate") {
+//switches to dark theme is activated on another page
+let onAnotherPage = localStorage.getItem("activeTheme");
+if (onAnotherPage === "dark theme activate") {
   toggleTheme();
 }
+
+//switches to dark theme if user prefered system theme is dark theme
+const userPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+if (userPrefersDarkTheme.matches) {
+  toggleTheme();
+}
+
