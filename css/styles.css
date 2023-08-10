@@ -122,37 +122,24 @@ img {
   display: flex;
   margin-top: 40px;
   justify-content: center;
+  gap: 40px;
 }
 
 .my-button-one {
-  font-size: 1rem;
-  line-height: 3rem;
   color: var(--background-color);
   background: var(--accent-color-two);
-  border: 1px solid var(--accent-color-two);
-  margin: 20px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  text-decoration: none;
 }
 
-.my-button-two {
-  font-size: 1rem;
-  line-height: 3rem;
+.my-button-one-outline {
   color: var(--accent-color-two);
   border: 1px solid var(--accent-color-two);
-  margin: 20px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  text-decoration: none;
 }
 
 .my-button-one:hover,
-.my-button-two:hover {
+.my-button-one-outline:hover {
   color: var(--background-color);
   background: var(--accent-color-one);
   border: 1px solid var(--accent-color-one);
-  padding: 10px 20px;
   transition: all 200ms ease-in-out;
 }
 
