@@ -14,7 +14,9 @@
 :root .dark-theme {
   --text-color: #fffafc;
   --background-color: #001b17;
-  --brand-color: teal;
+  --accent-color-one: teal;
+  --accent-color-two: #da7d9b;
+  --brand-color: #da7d9b;
 }
 
 /*
@@ -41,12 +43,6 @@ body {
 
 nav {
   background-color: var(--background-color);
-}
-
-h2,
-h3,
-h4 {
-  opacity: 0.8;
 }
 
 p {
@@ -115,10 +111,10 @@ img {
 .box {
   border-radius: 0.5em;
   border: 1px solid;
-  border-color: var(--accent-color-two);
+  border-color: var(--accent-color-one);
 }
 
-.my-button {
+.hero-button {
   display: flex;
   margin-top: 40px;
   justify-content: center;
@@ -135,11 +131,16 @@ img {
   border: 1px solid var(--accent-color-two);
 }
 
+.my-button {
+  color: var(--text-color);
+  background: var(--accent-color-one);
+}
+
+.my-button:hover,
 .my-button-one:hover,
 .my-button-one-outline:hover {
   color: var(--background-color);
   background: var(--accent-color-one);
-  border: 1px solid var(--accent-color-one);
   transition: all 200ms ease-in-out;
 }
 
