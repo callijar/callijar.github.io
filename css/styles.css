@@ -95,7 +95,8 @@ a:hover {
   transition: all 200ms ease-in-out;
 }
 
-.box a, .box a:hover {
+.box a,
+.box a:hover {
   text-decoration: none;
   background: transparent;
 }
