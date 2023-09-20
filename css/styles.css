@@ -1,5 +1,5 @@
 :root {
-  --primary-font: "JetBrains Mono", monospace;
+  --logo-font: "JetBrains Mono", monospace;
   --text-font: "Lato", sans-serif;
   --text-color: #001b17; /*  oklch(20% 0.05 180)*/
   --background-color: #fffafc; /* oklch(99% 0.01 0)*/
@@ -40,19 +40,46 @@
 
 body {
   background-color: var(--background-color);
+  font-family: var(--text-font);
   color: var(--text-color);
   text-align: center;
-  font-family: var(--primary-font);
+  font-size: larger;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 80ch;
+  display: block;
+  margin: 0.25em auto;
 }
 
 nav {
   background-color: var(--background-color);
+  margin-bottom: 10vh;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 0.5em;
+  line-height: 1.5;
+  max-width: 60ch;
+  text-align: left;
 }
 
 p {
   font-family: var(--text-font);
-  font-size: larger;
   line-height: 1.5;
+}
+
+hr {
+  width: 100%;
+  color: var(--accent-color-two);
 }
 
 a {
@@ -68,21 +95,25 @@ a:hover {
   transition: all 200ms ease-in-out;
 }
 
+.box a, .box a:hover {
+  text-decoration: none;
+  background: transparent;
+}
+
 ul {
+  display: block;
   font-family: var(--text-font);
+  text-align: left;
   margin-left: 1em;
 }
 
 li::marker {
-  color: --accent-color-two;
-}
-
-img {
-  margin: 1em auto;
+  color: var(--accent-color-two);
 }
 
 .my-brand {
   background: var(--brand-color);
+  font-family: var(--logo-font);
   padding: 5px;
 }
 
@@ -91,32 +122,17 @@ img {
 }
 
 .hero {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: auto;
-  margin-top: 2em;
-  padding: 2em;
-  border-radius: 0.5em;
-  line-height: 1.5;
-  max-width: 80ch;
-  text-align: left;
-  background: transparent;
-}
-
 .box {
-  border-radius: 0.5em;
-  border: 1px solid;
-  border-color: rgba(var(--accent-color-one-rgb),0.5);
-  background-color: rgba(var(--card-background-color-rgb),0.5);
+  border-color: rgba(var(--accent-color-one-rgb), 0.5);
+  background-color: rgba(var(--card-background-color-rgb), 0.5);
+  text-align: left;
 }
 
 .hero-button {
@@ -172,7 +188,7 @@ img {
 }
 
 @media (max-width: 600px) {
-  .row {
+  .box {
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;
