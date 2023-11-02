@@ -35,8 +35,7 @@ if (onAnotherPage === "dark theme activate") {
 }
 
 //switches to dark theme if user prefered system theme is dark theme
-const userPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const userPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 if (userPrefersDarkTheme.matches) {
   toggleTheme();
 }
-
