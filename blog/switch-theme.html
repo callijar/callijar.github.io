@@ -93,7 +93,7 @@
               <li>a <a href="#section-one">button</a>,</li>
               <li>a toggle switch,</li>
               <li>drop down list,</li>
-              <li>or <a href="#section-five">user's preferred mode</a></li>
+              <li>or <a href="#section-four-two">user's preferred mode</a></li>
             </ul>
             <li>
               Theme styling
@@ -111,7 +111,7 @@
               <a href="#section-three">function</a>
               that connects the "element" on your page and the styling
             </ul>
-            <li><a href="#section-four">Ideas</a> and considerations</li>
+            <li><a href="#section-four">Ideas and considerations</a></li>
             <li><a href="#section-six">Final notes</a></li>
           </ol>
         </section>
@@ -140,17 +140,77 @@
             >. I prefer SVGs because they are light-weight and don't lose their
             quality.
           </p>
+          <p>
+            You need to set an id for the SVG path so you can change it using
+            setAttribute when the button is clicked.
+          </p>
+          <p>
+            Do not forget to set an id for the theme button so that it can be
+            selected by JS querySelector.
+          </p>
         </section>
         <br />
         <section id="section-two">
           <h4>Multiple theme styles in a single CSS file</h4>
+          <p>
+            Theme toggle can switch between CSS files, but in this case, all the
+            styling is done with one CSS file. The colors are defined with CSS
+            variables in the root and the dark theme colors are defined in root
+            with a class named dark-theme. The default style is light. The
+            JavaScript function adds a class (dark-theme) to <q>body</q> so that
+            the dark-theme styling defined in the CSS file is applied.
+          </p>
+          <p>
+            The top of your CSS file would look like the following and you can
+            notice that if a variable is not defined in the dark-theme (for
+            example the font), the values from the default theme will apply.
+          </p>
+          <pre><code class="microlight">:root {
+  --text-font: "Lato", sans-serif;
+  --text-color: black
+  --background-color: white
+}
+          
+:root .dark-theme {
+  --text-color: white;
+  --background-color: black;
+}</code></pre>
+          <p>
+            If the style is already dark, the function removes the dark-theme
+            class so that only the default styling is applied.
+          </p>
         </section>
         <br />
         <section id="section-three">
           <h4>JavaScript code for switching themes</h4>
-          <pre><code class="microlight">
+          <p>
+            The JavaScript toggleTheme function has an if statement that is
+            called when the switch button is clicked. The variable inside the if
+            function needs to be defined beforehand.
+          </p>
 
-function toggleTheme() {
+          <pre><code class="microlight">var theme = "light-theme";</code></pre>
+
+          <p>
+            I used bootstrap navbar so I had a style class added to the navbar
+            in the dark-mode. I also assigned an id to the button's SVG path and
+            it changes from sun to moon with the theme switch.
+          </p>
+          
+          <p>
+            Based on your design, you can add or remove the changes that happen.
+            In the following code, whatever is inside the
+            <strong>if</strong> happens during the dark theme and the code
+            inside the <strong> else</strong> is executed in the light theme.
+          </p>
+
+          <p>
+            LocalStorage is for storing the theme preference in
+            <a href="#section-four-one"> multi-page websites</a> and for future
+            visits.
+          </p>
+
+          <pre><code class="microlight">function toggleTheme() {
   if (theme === "light-theme") {
     theme = "dark-theme";
     localStorage.setItem("activeTheme", "dark theme activate");
@@ -178,20 +238,28 @@ function toggleTheme() {
 
 var theme = "light-theme";
 let themeButton = document.querySelector("#theme-icon");
-themeButton.addEventListener("click", toggleTheme);
-
-//switches to dark theme is activated on another page
-let onAnotherPage = localStorage.getItem("activeTheme");
-if (onAnotherPage === "dark theme activate") {
-  toggleTheme();
-}
-
-          </code></pre>
+themeButton.addEventListener("click", toggleTheme);</code></pre>
         </section>
         <br />
         <section id="section-four">
           <h4>Ideas and considerations</h4>
-          <h5 id="section-five">
+
+          <h5 id="section-four-one">
+            <li>Set active theme for multi-page websites</li>
+          </h5>
+
+          <p>
+            I stored the theme status in the local storage so that if it has
+            been switched on another page, the status is accessible on other
+            pages. My default theme is light, so the function switches to
+            dark mode if it has been activated on any other page.
+          </p>
+          <pre><code class="microlight">let onAnotherPage = localStorage.getItem("activeTheme");   
+if (onAnotherPage === "dark theme activate") {  
+  toggleTheme();            
+}</code></pre>
+
+          <h5 id="section-four-two">
             <li>Do not blind dark theme users with a white background</li>
           </h5>
           <p>
@@ -199,9 +267,7 @@ if (onAnotherPage === "dark theme activate") {
             is dark mode:
           </p>
 
-          <pre><code class="microlight">
-const userPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-</code></pre>
+          <pre><code class="microlight">const userPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');</code></pre>
 
           <p>
             Because my default theme on load is <q>light</q>, I inserted an if
@@ -210,8 +276,7 @@ const userPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
             it back to <q>light</q> mode.
           </p>
 
-          <pre><code class="microlight">
-if (userPrefersDarkTheme.matches) {
+          <pre><code class="microlight">if (userPrefersDarkTheme.matches) {
   toggleTheme();
 }</code></pre>
         </section>
