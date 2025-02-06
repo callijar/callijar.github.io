@@ -10,7 +10,7 @@
 
 :root .dark-theme {
   --text-color: #e9ecef;
-  --background-color: #212529; 
+  --background-color: #212529;
   --background-color-rgb: 33, 37, 41;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .page-header-bg {
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   background-position: 50%;

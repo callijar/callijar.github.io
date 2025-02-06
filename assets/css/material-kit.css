@@ -4620,7 +4620,7 @@ fieldset:disabled .btn {
 }
 
 .nav-link {
-  display: block;
+  display: block; /* default: block */
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
@@ -4804,7 +4804,7 @@ fieldset:disabled .btn {
   --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* edited, default: column;*/
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
