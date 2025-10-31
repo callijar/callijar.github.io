@@ -1,9 +1,9 @@
 function toggleTheme() {
   if (theme === "light-theme") {
     theme = "dark-theme";
-    localStorage.setItem("activeTheme", "dark theme activate");
+    localStorage.setItem("activeTheme", "dark theme activated");
     document.querySelector("body").classList.add("dark-theme");
-    document.querySelector(".card").classList.add("bg-dark");
+    document.querySelector("nav").classList.add("navbar-dark");
     document
       .getElementById("theme-icon-path")
       .setAttribute(
@@ -12,9 +12,9 @@ function toggleTheme() {
       );
   } else {
     theme = "light-theme";
-    localStorage.setItem("activeTheme", "dark theme NOT activate");
+    localStorage.setItem("activeTheme", "dark theme NOT activated");
     document.querySelector("body").classList.remove("dark-theme");
-    document.querySelector(".card").classList.remove("bg-dark");
+    document.querySelector("nav").classList.remove("navbar-dark");
     document
       .getElementById("theme-icon-path")
       .setAttribute(
@@ -30,12 +30,20 @@ themeButton.addEventListener("click", toggleTheme);
 
 //switches to dark theme if it is activated on another page
 let onAnotherPage = localStorage.getItem("activeTheme");
-if (onAnotherPage === "dark theme activate") {
-  toggleTheme();
+if (onAnotherPage === "dark theme activated") {
+  if (theme === "light-theme") {
+    toggleTheme();
+  }
 }
-
+if (onAnotherPage === "dark theme NOT activated") {
+  if (theme === "dark-theme") {
+    toggleTheme();
+  }
+}
 //switches to dark theme if the user's preferred system theme is dark theme
-const userPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-if (userPrefersDarkTheme.matches) {
-  toggleTheme();
-}
+//const userPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+//if (theme === "light-theme") {
+//  if (userPrefersDarkTheme.matches) {
+//    toggleTheme();
+//  }
+//}

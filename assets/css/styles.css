@@ -1,106 +1,86 @@
-
 :root {
-  --text-font: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --text-color: #212529; /* gray-900*/
-  --background-color: #e9ecef; /* gray-200*/
-  --background-color-rgb: 255, 255, 255;
-  --accent-color-one: rgb(233, 30, 99);
-  --accent-color-one-rgb: 233, 30, 99;
+  --title-font: Harding, Palatino, serif;
+  --mono-font: "JetBrains Mono", monospace;
+  --text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --text-color: rgb(0, 0, 20); /*  oklch()*/
+  --background-color: floralwhite;
+  --card-background-color-rgb: 255, 250, 240;
+  --accent-color-one: peachpuff;
+  --accent-color-one-rgb: 255, 218, 185;
+  --accent-color-two: steelblue;
+  --accent-color-two-rgb: 70, 130, 180;
+  --brand-color: transparent;
 }
 
 :root .dark-theme {
-  --text-color: #e9ecef;
-  --background-color: #212529;
-  --background-color-rgb: 33, 37, 41;
+  --text-color: floralwhite;
+  --background-color: rgb(0, 0, 20);
+  --card-background-color-rgb: 0, 0, 20;
+  --accent-color-one: steelblue;
+  --accent-color-one-rgb: 70, 130, 180;
+  --accent-color-two: peachpuff;
+  --accent-color-two-rgb: 255, 218, 185;
+  --brand-color: transparent;
 }
+
+/*
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #fffafc;
+    --background-color: #001b17;
+    --brand-color: transparent;
+  }
+}
+*/
 
 ::selection {
   background: var(--accent-color-one);
-  color: var(--background-color);
+  color: #000;
 }
-
-::-webkit-scrollbar {
-  height: 5px;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color-one);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--text-color);
-  border-radius: 5px;
-}
-
-.note {
-  font-size: smaller;
-  opacity: 0.8;
-}
-
-.microlight {
-  font-family: var(--mono-font);
-  color: var(--accent-color-two);
-  white-space: pre;
-}
-
-
-.contact-lg {
-  font-size: 1.5rem;
-}
-
-.contact-icon i:hover {
-  color: var(--accent-color-one);
-  transition: all 300ms ease-in-out;
-}
-
-body {
-  font-family: var(--text-font);
-}
-
-/*!
 
 body {
   background-color: var(--background-color);
   font-family: var(--text-font);
   color: var(--text-color);
+  text-align: center;
   font-size: larger;
   line-height: 1.5;
 }
 
-.page-header-bg {
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  background-position: 50%;
-  overflow: hidden;
+.container {
+  max-width: 80ch;
+  display: block;
+  margin: 0.25em auto;
+}
+
+nav {
+  background-color: var(--background-color);
+  margin-bottom: 10vh;
+}
+
+section {
   display: flex;
-  max-width: 100%;
-  height: 75vh;
-  padding: 0;
+  flex-wrap: wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 0.5em;
+  line-height: 1.5;
+  max-width: 60ch;
+  text-align: left;
 }
 
-.page-header-bg video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  transform: translateX(-50%) translateY(-50%);
+p {
+  font-family: var(--text-font);
+  line-height: 1.5;
 }
 
-
-.my-blur {
-  box-shadow: inset 0px 0px 2px #fefefed1;
-  -webkit-backdrop-filter: saturate(200%) blur(30px);
-  backdrop-filter: saturate(200%) blur(30px);
-  border: 0 solid rgba(0, 0, 0, 0.125);
-  background: linear-gradient(0deg,
-  rgba(255, 255, 255, 0.4) 0%,
-  rgba(255, 255, 255, 0.3) 70%);
+hr {
+  width: 100%;
+  color: var(--accent-color-two);
 }
 
 a {
@@ -122,10 +102,93 @@ a:hover {
   background: transparent;
 }
 
-.box {
-  border-color: rgba(var(--accent-color-one-rgb), 0.5);
-  background-color: rgba(var(--card-background-color-rgb), 0.5);
+ul {
+  display: block;
+  font-family: var(--text-font);
   text-align: left;
+  margin-left: 1em;
+}
+
+li::marker {
+  color: var(--accent-color-two);
+}
+
+.serif-font {
+  font-family: var(--title-font);
+}
+
+.hero {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.box {
+  border-color: transparent;
+  background-color: transparent;
+  text-align: left;
+}
+
+.hero-button {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  gap: 40px;
+}
+
+.button__primary-filled {
+  color: var(--background-color);
+  background: var(--accent-color-two);
+}
+
+.button__primary-outline {
+  color: var(--accent-color-two);
+  border: 1px solid var(--accent-color-two);
+}
+
+.button__primary {
+  color: var(--text-color);
+  background: var(--accent-color-one);
+}
+
+.button__primary:hover,
+.button__primary-filled:hover,
+.button__primary-outline:hover {
+  color: var(--background-color);
+  background: var(--accent-color-one);
+  transition: all 200ms ease-in-out;
+}
+
+.icon__contact i {
+  margin: 0.25em;
+  font-size: 5vw;
+}
+
+.icon__contact i:hover,
+.icon__contact a:hover {
+  color: var(--accent-color-two);
+  background: transparent;
+  transition: all 200ms ease-in-out;
+}
+
+.note {
+  font-size: smaller;
+  opacity: 0.8;
+}
+
+.coder {
+  margin: 20px;
+  font-size: smaller;
+}
+
+.microlight {
+  font-family: var(--mono-font);
+  color: var(--accent-color-two);
+  text-shadow: 0px 0px 9px rgba(var(--accent-color-two-rgb), 0.7),
+    0px 0px 2px rgba(var(--accent-color-two-rgb), 0.4);
+  white-space: pre;
 }
 
 @media (max-width: 600px) {
@@ -139,4 +202,3 @@ a:hover {
     font-size: 25vw;
   }
 }
-*/
